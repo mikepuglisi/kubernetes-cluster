@@ -1,0 +1,46 @@
+global:
+  # rbacEnable: false
+
+# FOLLOWING DOESNT WORK
+alertmanager:
+  storageSpec:
+    volumeClaimTemplate:
+      spec:
+        storageClassName: rbd
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
+
+prometheus:
+  storageSpec:
+    volumeClaimTemplate:
+      spec:
+        storageClassName: rbd
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
+
+grafana:
+  # auth:
+  #   anonymous:
+  #     enabled: "false"
+  adminPassword: "supersecret"
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts: 
+      - grafana.local.com
+    # tls:
+    #   - secretName: grafana-tls
+    #     hosts:
+    #       - grafana.local.com
+  # storageSpec:
+  #   class: rbd
+  #   accessMode: "ReadWriteOnce"
+  #   resources:
+  #     requests:
+  #       storage: 10Gi

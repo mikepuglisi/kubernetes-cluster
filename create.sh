@@ -11,4 +11,4 @@ kubectl rollout status -w deployment/ingress-nginx-nginx-ingress-controller --na
 ## Monitoring
 helm repo add coreos https://s3-eu-west-1.amazonaws.com/coreos-charts/stable/
 helm install coreos/prometheus-operator --name prometheus-operator --namespace monitoring
-helm install coreos/kube-prometheus --name kube-prometheus --namespace monitoring
+helm install coreos/kube-prometheus -f custom-values.yaml --name kube-prometheus --namespace monitoring

@@ -15,6 +15,8 @@ helm inspect values stable/nginx-ingress > ./ingress-nginx/values.example.yaml
 helm install --values ./ingress-nginx/values.yaml stable/nginx-ingress
 
 https://github.com/helm/helm/blob/master/docs/using_helm.md
+https://akomljen.com/get-kubernetes-cluster-metrics-with-prometheus-in-5-minutes/
+
 
 
 
